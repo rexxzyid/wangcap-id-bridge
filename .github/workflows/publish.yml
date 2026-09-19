@@ -62,8 +62,8 @@ jobs:
       - name: Build (dual wasm + bundle + .d.ts)
         run: bun run build
 
-      - name: Run Tests with Bun
-        run: bun test
+      - name: Run Tests with Bun (core, tanpa parity yang butuh paket eksternal)
+        run: bun test $(ls test/*.test.ts | grep -vE '\-parity')
         env:
           CI: true
 
