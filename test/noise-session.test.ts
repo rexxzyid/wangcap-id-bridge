@@ -12,8 +12,8 @@ import {
   sha256,
   hkdf,
   Curve,
-} from "@rexxhayanasi/elaina-baileys/src/Utils/crypto";
-import { makeNoiseHandler } from "@rexxhayanasi/elaina-baileys/src/Utils/noise-handler";
+} from "@rexxhayanasi/elaina-baileys";
+import { makeNoiseHandler } from "@rexxhayanasi/elaina-baileys";
 
 // Pino logger mock for makeNoiseHandler
 const mockLogger = {

@@ -9,8 +9,8 @@ import {
   LTHashState,
 } from "../dist";
 
-import { hkdf, hmacSign } from "@rexxhayanasi/elaina-baileys/src/Utils/crypto";
-import { LT_HASH_ANTI_TAMPERING } from "@rexxhayanasi/elaina-baileys/src/Utils/lt-hash";
+import { hkdf, hmacSign } from "@rexxhayanasi/elaina-baileys";
+import { LT_HASH_ANTI_TAMPERING } from "@rexxhayanasi/elaina-baileys";
 
 function toHex(buffer: Uint8Array | ArrayBuffer): string {
   const bytes = buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer);
