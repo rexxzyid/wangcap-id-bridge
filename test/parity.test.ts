@@ -2,7 +2,7 @@ import { describe, it, expect } from "bun:test";
 import {
   encodeBinaryNode,
   decodeBinaryNode as legacyDecodeNode,
-} from "baileys";
+} from "@rexxhayanasi/elaina-baileys";
 import { decodeNode, encodeNode, type BinaryNode } from "../dist";
 
 // Helper to visualize buffer differences

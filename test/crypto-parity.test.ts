@@ -4,7 +4,7 @@ import { md5, hkdf } from "../dist";
 import {
   md5 as baileysMd5,
   hkdf as baileysHkdf,
-} from "baileys/lib/Utils/crypto";
+} from "@rexxhayanasi/elaina-baileys/src/Utils/crypto";
 
 function hex(buffer: Uint8Array | Buffer): string {
   return Buffer.from(buffer).toString("hex");

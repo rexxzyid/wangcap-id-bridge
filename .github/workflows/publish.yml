@@ -62,11 +62,8 @@ jobs:
       - name: Build (dual wasm + bundle + .d.ts)
         run: bun run build
 
-      - name: Run Tests with Bun (core, tanpa test yang butuh paket baileys eksternal)
-        run: |
-          FILES=$(grep -LE "baileys" test/*.test.ts)
-          echo "Menjalankan test inti:"; echo "$FILES"
-          bun test $FILES
+      - name: Run Tests with Bun
+        run: bun test
         env:
           CI: true
 

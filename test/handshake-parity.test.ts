@@ -1,5 +1,5 @@
 import { describe, it, expect } from "bun:test";
-import { encodeBinaryNode } from "baileys";
+import { encodeBinaryNode } from "@rexxhayanasi/elaina-baileys";
 import { encodeNode, decodeNode, type BinaryNode } from "../dist";
 
 function hex(buffer: Uint8Array): string {
