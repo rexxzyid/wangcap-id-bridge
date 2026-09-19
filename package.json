@@ -1,5 +1,5 @@
 {
-    "name": "wangcap-id-bridge",
+    "name": "@rexxhayanasi/wangcap-id-bridge",
     "version": "1.0.0",
     "description": "A high-performance utilities for WhatsApp, powered by Rust and WebAssembly.",
     "author": "RexxHayanasi",
