@@ -144,8 +144,8 @@ describe("AppState Parity: Baileys vs WASM", () => {
 
       const baileysResult = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
         base.buffer as ArrayBuffer,
-        [addItem.buffer as ArrayBuffer],
-        []
+        [],
+        [addItem.buffer as ArrayBuffer]
       );
 
       const wasmResult = ltHashWasm.subtractThenAdd(base, [], [addItem]);
@@ -161,14 +161,14 @@ describe("AppState Parity: Baileys vs WASM", () => {
 
       const baileysAfterAdd = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
         initialBase.buffer as ArrayBuffer,
-        [item.buffer as ArrayBuffer],
-        []
+        [],
+        [item.buffer as ArrayBuffer]
       );
 
       const baileysResult = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
         baileysAfterAdd,
-        [],
-        [item.buffer as ArrayBuffer]
+        [item.buffer as ArrayBuffer],
+        []
       );
 
       const wasmAfterAdd = ltHashWasm.subtractThenAdd(initialBase, [], [item]);
@@ -196,8 +196,8 @@ describe("AppState Parity: Baileys vs WASM", () => {
 
       const baileysResult = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
         base.buffer as ArrayBuffer,
-        addItems.map((i) => i.buffer as ArrayBuffer),
-        subtractItems.map((i) => i.buffer as ArrayBuffer)
+        subtractItems.map((i) => i.buffer as ArrayBuffer),
+        addItems.map((i) => i.buffer as ArrayBuffer)
       );
 
       const wasmResult = ltHashWasm.subtractThenAdd(
@@ -242,12 +242,12 @@ describe("AppState Parity: Baileys vs WASM", () => {
 
       const baileysResult = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
         base.buffer as ArrayBuffer,
+        [],
         [
           valueMac1.buffer as ArrayBuffer,
           valueMac2.buffer as ArrayBuffer,
           valueMac3.buffer as ArrayBuffer,
-        ],
-        []
+        ]
       );
 
       const wasmResult = ltHashWasm.subtractThenAdd(
@@ -580,8 +580,8 @@ describe("AppState Integration Tests", () => {
 
     baileysHash = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
       baileysHash,
-      [new Uint8Array(baileysValueMac).buffer as ArrayBuffer],
-      []
+      [],
+      [new Uint8Array(baileysValueMac).buffer as ArrayBuffer]
     );
     wasmHash = ltHashWasm.subtractThenAdd(wasmHash, [], [wasmValueMac]);
     expect(toHex(wasmHash)).toBe(toHex(baileysHash));
