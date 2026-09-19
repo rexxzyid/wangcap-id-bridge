@@ -1,4 +1,4 @@
-# WhatsApp Rust Bridge - AI Coding Guidelines
+# Wangcap ID Bridge - AI Coding Guidelines
 
 Quick orientation for AI agents and contributors: this repo is a Rust → WebAssembly bridge that provides binary encoding/decoding utilities for WhatsApp protocols and a small LibSignal helper layer with JS bindings and TS types.
 
@@ -50,7 +50,7 @@ If anything's unclear, ask for the target: (a) add a new wasm export, (b) change
 
 — End of guide —
 
-# WhatsApp Rust Bridge - AI Coding Guidelines
+# Wangcap ID Bridge - AI Coding Guidelines
 
 ## Architecture Overview
 

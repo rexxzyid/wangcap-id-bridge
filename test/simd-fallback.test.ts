@@ -30,7 +30,7 @@ describe("SIMD / non-SIMD initialization paths", () => {
   });
 
   test("forced non-SIMD path falls back to nosimd wasm with identical output", () => {
-    const out = runProbe({ WHATSAPP_RUST_BRIDGE_FORCE_NOSIMD: "1" });
+    const out = runProbe({ WANGCAP_ID_BRIDGE_FORCE_NOSIMD: "1" });
     expect(out.simdActive).toBe(false);
     expect(out.encodedLen).toBeGreaterThan(0);
     expect(out.decodedTag).toBe("iq");
@@ -46,7 +46,7 @@ describe("SIMD / non-SIMD initialization paths", () => {
       encoding: "utf8",
     });
     const noSimd = spawnSync("bun", ["run", probeBytes], {
-      env: { ...process.env, WHATSAPP_RUST_BRIDGE_FORCE_NOSIMD: "1" },
+      env: { ...process.env, WANGCAP_ID_BRIDGE_FORCE_NOSIMD: "1" },
       encoding: "utf8",
     });
     expect(simd.status).toBe(0);

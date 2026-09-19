@@ -1,4 +1,4 @@
-import { initSync } from "../pkg/whatsapp_rust_bridge.js";
+import { initSync } from "../pkg/wangcap_id_bridge.js";
 
 import {
   nosimdWasmBase64,
@@ -32,7 +32,7 @@ function tryInit(b64: string): boolean {
 
 const forceNoSimd =
   typeof process !== "undefined" &&
-  process.env?.WHATSAPP_RUST_BRIDGE_FORCE_NOSIMD === "1";
+  process.env?.WANGCAP_ID_BRIDGE_FORCE_NOSIMD === "1";
 
 const simdSupported = !forceNoSimd && WebAssembly.validate(SIMD_PROBE);
 
@@ -44,4 +44,4 @@ if (simdSupported && tryInit(simdWasmBase64())) {
 }
 
 export const __wasmSimdActive: boolean = simdUsed;
-export * from "../pkg/whatsapp_rust_bridge.js";
+export * from "../pkg/wangcap_id_bridge.js";

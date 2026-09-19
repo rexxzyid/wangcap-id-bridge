@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
-const pkgWasm = resolve(root, "pkg/whatsapp_rust_bridge_bg.wasm");
+const pkgWasm = resolve(root, "pkg/wangcap_id_bridge_bg.wasm");
 const outDir = resolve(root, "assets/wasm");
 
 const wasmOptFlags = [
@@ -75,7 +75,7 @@ if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
 build("simd");
 build("nosimd");
 
-// Make pkg/whatsapp_rust_bridge_bg.wasm point to the SIMD variant for the
+// Make pkg/wangcap_id_bridge_bg.wasm point to the SIMD variant for the
 // wasm-bindgen JS wrapper's default URL resolution (rebuild simd last so
 // pkg ends in a clean state for `wasm-pack publish`-style consumers).
 copyFileSync(resolve(outDir, "simd.wasm"), pkgWasm);

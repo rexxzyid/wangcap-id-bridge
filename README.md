@@ -1,4 +1,4 @@
-# whatsapp-rust-bridge
+# wangcap-id-bridge
 
 High-performance WhatsApp utilities powered by Rust and WebAssembly.
 
