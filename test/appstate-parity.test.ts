@@ -143,9 +143,9 @@ describe("AppState Parity: Baileys vs WASM", () => {
       const addItem = new Uint8Array([1, 2, 3, 4, 5]);
 
       const baileysResult = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
-        base.buffer as ArrayBuffer,
+        base,
         [],
-        [addItem.buffer as ArrayBuffer]
+        [addItem]
       );
 
       const wasmResult = ltHashWasm.subtractThenAdd(base, [], [addItem]);
@@ -160,14 +160,14 @@ describe("AppState Parity: Baileys vs WASM", () => {
       const item = new Uint8Array([1, 2, 3, 4, 5]);
 
       const baileysAfterAdd = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
-        initialBase.buffer as ArrayBuffer,
+        initialBase,
         [],
-        [item.buffer as ArrayBuffer]
+        [item]
       );
 
       const baileysResult = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
         baileysAfterAdd,
-        [item.buffer as ArrayBuffer],
+        [item],
         []
       );
 
@@ -195,9 +195,9 @@ describe("AppState Parity: Baileys vs WASM", () => {
       ];
 
       const baileysResult = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
-        base.buffer as ArrayBuffer,
-        subtractItems.map((i) => i.buffer as ArrayBuffer),
-        addItems.map((i) => i.buffer as ArrayBuffer)
+        base,
+        subtractItems,
+        addItems
       );
 
       const wasmResult = ltHashWasm.subtractThenAdd(
@@ -241,13 +241,9 @@ describe("AppState Parity: Baileys vs WASM", () => {
       crypto.getRandomValues(valueMac3);
 
       const baileysResult = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
-        base.buffer as ArrayBuffer,
+        base,
         [],
-        [
-          valueMac1.buffer as ArrayBuffer,
-          valueMac2.buffer as ArrayBuffer,
-          valueMac3.buffer as ArrayBuffer,
-        ]
+        [valueMac1, valueMac2, valueMac3]
       );
 
       const wasmResult = ltHashWasm.subtractThenAdd(
@@ -552,7 +548,7 @@ describe("AppState Integration Tests", () => {
 
     const ltHashWasm = new LTHashAntiTampering();
     let wasmHash: Uint8Array = new Uint8Array(128).fill(0);
-    let baileysHash: ArrayBuffer = new ArrayBuffer(128);
+    let baileysHash: Uint8Array = new Uint8Array(128);
 
     const indexJson = JSON.stringify(["mute", "1234567890@s.whatsapp.net"]);
     const indexBytes = Buffer.from(indexJson);
@@ -581,7 +577,7 @@ describe("AppState Integration Tests", () => {
     baileysHash = await LT_HASH_ANTI_TAMPERING.subtractThenAdd(
       baileysHash,
       [],
-      [new Uint8Array(baileysValueMac).buffer as ArrayBuffer]
+      [new Uint8Array(baileysValueMac)]
     );
     wasmHash = ltHashWasm.subtractThenAdd(wasmHash, [], [wasmValueMac]);
     expect(toHex(wasmHash)).toBe(toHex(baileysHash));
