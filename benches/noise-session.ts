@@ -1,8 +1,8 @@
 import { NoiseSession, encodeNode, type BinaryNode } from "../dist/index.js";
 import { run, bench, do_not_optimize, boxplot, summary } from "mitata";
 import { randomBytes } from "crypto";
-import { aesEncryptGCM, sha256, hkdf } from "baileys/lib/Utils/crypto.js";
-import { encodeBinaryNode } from "baileys";
+import { aesEncryptGCM, sha256, hkdf } from "@rexxhayanasi/elaina-baileys";
+import { encodeBinaryNode } from "@rexxhayanasi/elaina-baileys";
 
 // Test data
 const testPublicKey = randomBytes(32);

@@ -7,7 +7,7 @@ import {
 import {
   md5 as baileysMd5,
   hkdf as baileysHkdf,
-} from "baileys/lib/Utils/crypto.js";
+} from "@rexxhayanasi/elaina-baileys";
 
 // Test data
 const plaintext = Buffer.from("Benchmark test data for crypto operations ".repeat(10));

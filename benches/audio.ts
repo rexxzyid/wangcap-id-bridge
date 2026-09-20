@@ -3,7 +3,7 @@ import { generateAudioWaveform, getAudioDuration } from "../dist/index.js";
 import {
   getAudioWaveform as getAudioWaveformOld,
   getAudioDuration as getAudioDurationOld,
-} from "baileys";
+} from "@rexxhayanasi/elaina-baileys";
 import fs from "node:fs";
 
 const fileBuffer = fs.readFileSync("./assets/sonata.mp3");

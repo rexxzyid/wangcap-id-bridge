@@ -3,7 +3,7 @@ import { generateProfilePicture, extractImageThumb } from "../dist/index.js";
 import {
   generateProfilePicture as generateProfilePictureOld,
   extractImageThumb as extractImageThumbOld,
-} from "baileys";
+} from "@rexxhayanasi/elaina-baileys";
 import fs from "node:fs";
 
 const fileBuffer = fs.readFileSync("./assets/image.png");

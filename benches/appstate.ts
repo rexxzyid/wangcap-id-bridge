@@ -8,7 +8,7 @@ import {
   generateIndexMac,
 } from "../dist/index.js";
 
-import { hkdf, hmacSign, LT_HASH_ANTI_TAMPERING } from "baileys";
+import { hkdf, hmacSign, LT_HASH_ANTI_TAMPERING } from "@rexxhayanasi/elaina-baileys";
 
 async function baileysExpandKeys(keydata: Uint8Array) {
   const expanded = await hkdf(keydata, 160, { info: "WhatsApp Mutation Keys" });

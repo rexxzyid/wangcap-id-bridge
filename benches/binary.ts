@@ -3,7 +3,7 @@ import { run, bench, do_not_optimize, boxplot, summary } from "mitata";
 import {
   encodeBinaryNode as encodeBinaryNodeOld,
   decodeBinaryNode as decodeBinaryNodeOld,
-} from "baileys";
+} from "@rexxhayanasi/elaina-baileys";
 import { deflateSync } from "node:zlib";
 
 const testNode: BinaryNode = {
