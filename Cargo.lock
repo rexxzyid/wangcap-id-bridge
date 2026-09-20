@@ -1221,7 +1221,7 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 [[package]]
 name = "wacore-appstate"
 version = "0.5.0"
-source = "git+https://github.com/jlucaso1/whatsapp-rust.git?branch=main#88a0fe074fdc09d73be95cdd23743fba22ef172e"
+source = "git+https://github.com/rexxzyid/wangcap-bridge.git?rev=88a0fe074fdc09d73be95cdd23743fba22ef172e#88a0fe074fdc09d73be95cdd23743fba22ef172e"
 dependencies = [
  "anyhow",
  "bytemuck",
@@ -1242,7 +1242,7 @@ dependencies = [
 [[package]]
 name = "wacore-binary"
 version = "0.5.0"
-source = "git+https://github.com/jlucaso1/whatsapp-rust.git?branch=main#88a0fe074fdc09d73be95cdd23743fba22ef172e"
+source = "git+https://github.com/rexxzyid/wangcap-bridge.git?rev=88a0fe074fdc09d73be95cdd23743fba22ef172e#88a0fe074fdc09d73be95cdd23743fba22ef172e"
 dependencies = [
  "bytes",
  "compact_str",
@@ -1258,7 +1258,7 @@ dependencies = [
 [[package]]
 name = "wacore-libsignal"
 version = "0.5.0"
-source = "git+https://github.com/jlucaso1/whatsapp-rust.git?branch=main#88a0fe074fdc09d73be95cdd23743fba22ef172e"
+source = "git+https://github.com/rexxzyid/wangcap-bridge.git?rev=88a0fe074fdc09d73be95cdd23743fba22ef172e#88a0fe074fdc09d73be95cdd23743fba22ef172e"
 dependencies = [
  "aes",
  "arrayref",
@@ -1290,7 +1290,7 @@ dependencies = [
 [[package]]
 name = "wacore-noise"
 version = "0.5.0"
-source = "git+https://github.com/jlucaso1/whatsapp-rust.git?branch=main#88a0fe074fdc09d73be95cdd23743fba22ef172e"
+source = "git+https://github.com/rexxzyid/wangcap-bridge.git?rev=88a0fe074fdc09d73be95cdd23743fba22ef172e#88a0fe074fdc09d73be95cdd23743fba22ef172e"
 dependencies = [
  "anyhow",
  "bytes",
@@ -1306,9 +1306,46 @@ dependencies = [
 ]
 
 [[package]]
+name = "wangcap-id-bridge"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "base64",
+ "curve25519-dalek",
+ "getrandom",
+ "hashify",
+ "hkdf 0.12.4",
+ "hmac 0.12.1",
+ "image",
+ "img-parts",
+ "js-sys",
+ "log",
+ "md-5",
+ "prost",
+ "rand",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_bytes",
+ "serde_json",
+ "sha2 0.10.9",
+ "simd-adler32",
+ "symphonia",
+ "tsify-next",
+ "uuid",
+ "wacore-appstate",
+ "wacore-binary",
+ "wacore-libsignal",
+ "wacore-noise",
+ "waproto",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+]
+
+[[package]]
 name = "waproto"
 version = "0.5.0"
-source = "git+https://github.com/jlucaso1/whatsapp-rust.git?branch=main#88a0fe074fdc09d73be95cdd23743fba22ef172e"
+source = "git+https://github.com/rexxzyid/wangcap-bridge.git?rev=88a0fe074fdc09d73be95cdd23743fba22ef172e#88a0fe074fdc09d73be95cdd23743fba22ef172e"
 dependencies = [
  "prost",
  "serde",
@@ -1429,43 +1466,6 @@ checksum = "4b572dff8bcf38bad0fa19729c89bb5748b2b9b1d8be70cf90df697e3a8f32aa"
 dependencies = [
  "js-sys",
  "wasm-bindgen",
-]
-
-[[package]]
-name = "wangcap-id-bridge"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "base64",
- "curve25519-dalek",
- "getrandom",
- "hashify",
- "hkdf 0.12.4",
- "hmac 0.12.1",
- "image",
- "img-parts",
- "js-sys",
- "log",
- "md-5",
- "prost",
- "rand",
- "serde",
- "serde-wasm-bindgen",
- "serde_bytes",
- "serde_json",
- "sha2 0.10.9",
- "simd-adler32",
- "symphonia",
- "tsify-next",
- "uuid",
- "wacore-appstate",
- "wacore-binary",
- "wacore-libsignal",
- "wacore-noise",
- "waproto",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "web-sys",
 ]
 
 [[package]]
