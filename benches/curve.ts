@@ -1,6 +1,6 @@
 import { bench, do_not_optimize, boxplot, summary, run } from "mitata";
 import * as wasmCurve from "../dist/index.js";
-import * as nodeCurve from "@whiskeysockets/libsignal-node/src/curve.js";
+import * as nodeCurve from "@rexxhayanasi/elaina-libsignal/src/curve.js";
 
 const bobKeyPair = nodeCurve.generateKeyPair();
 const aliceKeyPair = nodeCurve.generateKeyPair();

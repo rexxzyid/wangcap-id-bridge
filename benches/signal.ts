@@ -8,8 +8,8 @@ import {
 } from "../dist/index.js";
 import { FakeStorage } from "../test/helpers/fake_storage.ts";
 
-import * as libsignalNode from "@whiskeysockets/libsignal-node";
-import { type SignalStorage } from "@whiskeysockets/libsignal-node";
+import * as libsignalNode from "@rexxhayanasi/elaina-libsignal";
+import { type SignalStorage } from "@rexxhayanasi/elaina-libsignal";
 
 const libsignalKeyHelper = (libsignalNode as any).keyhelper;
 
@@ -222,7 +222,7 @@ boxplot(() => {
       do_not_optimize(result);
     }).gc("inner");
 
-    bench("Encrypt typical message (libsignal-node)", async () => {
+    bench("Encrypt typical message (elaina-libsignal)", async () => {
       const result = await encLib.alice.encrypt(typicalMessage);
       do_not_optimize(result);
     }).gc("inner");
@@ -251,7 +251,7 @@ boxplot(() => {
       };
     }).gc("inner");
 
-    bench("Decrypt WhisperMessage (libsignal-node)", function* () {
+    bench("Decrypt WhisperMessage (elaina-libsignal)", function* () {
       yield {
         [0]: async () => await decLib.alice.encrypt(typicalMessage),
         bench: async (encrypted: { body: unknown }) => {
@@ -284,7 +284,7 @@ boxplot(() => {
       do_not_optimize(decryptedByAlice);
     }).gc("inner");
 
-    bench("Full round-trip encrypt+decrypt (libsignal-node)", async () => {
+    bench("Full round-trip encrypt+decrypt (elaina-libsignal)", async () => {
       const toBob = await rtLib.alice.encrypt(typicalMessage);
       const decryptedByBob = await rtLib.bob.decryptWhisperMessage(
         toBob.body as unknown as Uint8Array,
